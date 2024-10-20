@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prac Test C Question 1 Form</title>
+  <style>
+    label {
+      display:inline-block;
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Orders by Customer</h1>
+  <p>Enter a Customer ID and then select whether you want to view orders that have been shipped or not shipped:</p>
+  <form id="Q1form" action="" method="POST">
+    {% csrf_token %}
+    <p>
+      <label for="custID">Customer ID:</label><input type="text" id="custID" name="customerNum">
+    </p>
+    <p><label for="shipped">Show me</label>
+      <select id="shipped" name="shipped">
+        <option value="0">--please choose--</option>
+        <option value="Y">Shipped</option>
+        <option value="N">Not-Shipped</option>
+      </select>
+      &nbsp;orders for this customer<br>
+      <input type="submit" value="Show Orders" name="submit">
+    </p>
+  </form>
+</body>
+</html>
